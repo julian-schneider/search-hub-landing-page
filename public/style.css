@@ -1,0 +1,145 @@
+#conclusionPageSteps .euiStep__titleWrapper {
+  float: left;
+}
+
+#conclusionPageSteps .euiStep__content {
+  padding-top: 0;
+}
+
+#userback_button_container .userback-controls .userback-checkbox-container .userback-checkbox,
+#userback_button_container .userback-controls input[type="text"],
+#userback_button_container .userback-controls input[type="email"],
+#userback_button_container .userback-controls textarea,
+#userback_button_container .userback-controls .userback-controls-attach-actions btn {
+  border: 1px solid #bbb !important;
+}
+* {
+  scroll-margin-top: 60px;
+  scroll-padding-top: 60px;
+}
+
+.cellsNoTopBorder > td {
+  border-top: none;
+}
+
+.euiFlexItem:empty {
+  display: none;
+}
+
+.searchFilterMenuPanel {
+  width: 600px;
+}
+
+/* make popover content scrollable if the height of the content exceeds max height */
+.searchFilterMenuFilterList, .searchFilterMenu > .euiContextMenuPanel > div, .resourceVersionSelectorList {
+  overflow-y: auto;
+  overflow-block: auto;
+  overflow-x: hidden;
+  overflow-inline: hidden;
+  block-size: auto;
+  max-height: 450px;
+}
+
+mark.euiMark {
+  background-color: rgb(227, 229, 95);
+}
+
+/* styling for multi-line search filter pills */
+button.searchFilterPill {
+  block-size: initial;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+button.searchFilterPill > span {
+  flex-wrap: wrap;
+  justify-content: start;
+}
+/* styling for the badges within filter pills, which are clickable */
+button.searchFilterPill > span > span {
+  cursor: pointer;
+}
+
+/* styling for search context menu headers */
+.euiContextMenu__text:has(.euiFlexGroup) {
+  width: 100%;
+}
+
+/* style EuiSelectable options like EuiCheckbox */
+.euiSelectableListItem__icon {
+  border: 1px solid rgb(145, 146, 150);
+  border-radius: 4px;
+}
+
+/* add space between left-side icon and text in header links */
+.euiHeaderLink .euiButtonEmpty__text .euiIcon {
+  margin-right: 8px;
+  vertical-align: text-top;
+}
+
+/* add space between right-side icon and text in links */
+.euiLink .euiIcon {
+  margin-inline-start: 4px;
+}
+
+/* ensure button text is bold (excluding link and context menu item buttons) */
+button:not(.euiLink):not(.euiContextMenuItem) {
+  font-weight: bold !important;
+}
+
+/* hide webpack error overlay which can't be disabled, see https://stackoverflow.com/a/47400249 */
+/* the overlay interferes with our E2E tests */
+iframe#webpack-dev-server-client-overlay {
+  display: none;
+}
+
+#userback_button_container .userback-button .userback-button-content {
+  background-color: #74B549 !important;
+}
+
+.scrollToTopButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+body:has(.euiBottomBar) .scrollToTopButton {
+  bottom: 80px;
+}
+
+.outerPanel {
+  box-shadow: 0 0.9px 4px -1px rgba(0, 0, 0, 0.08), 0 2.6px 8px -1px rgba(0, 0, 0, 0.06), 0 5.7px 12px -1px rgba(0, 0, 0, 0.05), 0 15px 15px -1px rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+}
+
+.innerPanel {
+  box-shadow: 0 0.7px 1.4px rgba(0, 0, 0, 0.07), 0 1.9px 4px rgba(0, 0, 0, 0.05), 0 4.5px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 0 0 16px 16px;
+}
+
+/* Styling of title link on ResourceCard */
+.resourceCard a:hover {
+  text-decoration: underline !important;
+}
+.resourceCardTitle {
+  color: black !important;
+}
+
+/* styling of titles and buttons in context menus */
+.context-menu-label {
+  color: unset !important;
+  padding-bottom: 0;
+}
+.context-menu-button {
+  padding-left: 24px !important;
+}
+
+/* otherwise the EUI tour may shrink its anchor */
+.euiPopover.euiTourAnchor {
+  display: block !important;
+}
+
+/* increases contrast for the little dots indicating active/inactive EUI tour steps */
+.euiTourStepIndicator svg.euiIcon:not([aria-current="step"]) {
+  color: #BBBBBB;
+}
