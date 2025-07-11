@@ -12,6 +12,9 @@ concurrency:
 env:
   GIT_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
   NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+permissions:
+  contents: read
+  packages: write
 jobs:
   build:
     name: "Build Image"
