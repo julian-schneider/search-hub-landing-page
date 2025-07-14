@@ -15,6 +15,9 @@ import { css, Global } from "@emotion/react";
 import { ReactComponent as LogoFairagroWide } from "../logos/Project_Logo_footer.svg";
 // import { ReactComponent as LogoFairagroTall } from "../logos/Project_Logo_overviewpage.svg";
 
+const DATASETS_URL = process.env.REACT_APP_DATASETS_URL;
+const REPOSITORIES_URL = process.env.REACT_APP_REPOSITORIES_URL;
+
 const LandingPage: React.FC = () => {
   return (
     <>
@@ -95,7 +98,7 @@ const LandingPage: React.FC = () => {
           <EuiPanel className={"servicePanel"}>
             <EuiFlexGroup direction={"column"} alignItems={"center"}>
               <EuiFlexItem>
-                <EuiButton className={"serviceBtn"}>
+                <EuiButton className={"serviceBtn"} href={DATASETS_URL}>
                   <EuiTitle>
                     <h3>
                       Datasets <EuiIcon type="search" />
@@ -124,7 +127,10 @@ const LandingPage: React.FC = () => {
           <EuiPanel className={"servicePanel"}>
             <EuiFlexGroup direction={"column"} alignItems={"center"}>
               <EuiFlexItem>
-                <EuiButton className={"serviceBtn"}>
+                <EuiButton
+                  className={"serviceBtn"}
+                  href={"https://www.example.org"}
+                >
                   <EuiTitle>
                     <h3>
                       Repositories <EuiIcon type="search" />
