@@ -9,6 +9,14 @@ import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "./theme";
 
+declare global {
+  interface Window {
+    REACT_APP_LANDING_URL?: string;
+    REACT_APP_DATASETS_URL?: string;
+    REACT_APP_REPOSITORIES_URL?: string;
+  }
+}
+
 render(
   <React.StrictMode>
     <BrowserRouter>
