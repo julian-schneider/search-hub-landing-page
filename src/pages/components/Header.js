@@ -6,6 +6,8 @@ import {
   EuiIcon,
   EuiHeaderLinks,
   EuiText,
+  EuiLink,
+  EuiButtonEmpty,
 } from "@elastic/eui";
 import { EuiCustomHeaderLink } from "./EuiCustomLink";
 import { useTheme } from "@emotion/react";
@@ -34,24 +36,28 @@ export default function Header() {
           </EuiCustomHeaderLink>
         </EuiHeaderSectionItem>
         <EuiHeaderSectionItem>
-          <EuiCustomHeaderLink
+          <EuiLink
             color="primary"
-            to="/search"
-            iconType={"search"}
-            iconSide={"left"}
+            href={window.REACT_APP_DATASETS_URL + "/search"}
           >
-            <EuiText>Search for <strong>datasets</strong></EuiText>
-          </EuiCustomHeaderLink>
+            <EuiButtonEmpty iconType={"search"}>
+              <EuiText>
+                Search for <strong>datasets</strong>
+              </EuiText>
+            </EuiButtonEmpty>
+          </EuiLink>
         </EuiHeaderSectionItem>
         <EuiHeaderSectionItem>
-          <EuiCustomHeaderLink
+          <EuiLink
             color="primary"
-            to="/search"
-            iconType={"search"}
-            iconSide={"left"}
+            href={window.REACT_APP_REPOSITORIES_URL + "/search"}
           >
-            <EuiText>Search for <strong>repositories</strong></EuiText>
-          </EuiCustomHeaderLink>
+            <EuiButtonEmpty iconType={"search"}>
+              <EuiText>
+                Search for <strong>repositories</strong>
+              </EuiText>
+            </EuiButtonEmpty>
+          </EuiLink>
         </EuiHeaderSectionItem>
         <EuiHeaderSectionItem>
           <EuiHeaderLinks

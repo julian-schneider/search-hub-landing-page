@@ -120,7 +120,7 @@ const LandingPage: React.FC = () => {
               <EuiFlexItem>
                 <EuiButton
                   className={"serviceBtn"}
-                  href={"https://www.example.org"}
+                  href={window.REACT_APP_REPOSITORIES_URL}
                 >
                   <EuiTitle>
                     <h3>
