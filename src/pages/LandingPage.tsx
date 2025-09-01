@@ -13,7 +13,6 @@ import {
 } from "@elastic/eui";
 import { css, Global } from "@emotion/react";
 import { ReactComponent as LogoFairagroWide } from "../logos/Project_Logo_footer.svg";
-// import { ReactComponent as LogoFairagroTall } from "../logos/Project_Logo_overviewpage.svg";
 
 const LandingPage: React.FC = () => {
   return (
@@ -33,11 +32,6 @@ const LandingPage: React.FC = () => {
         </EuiFlexItem>
       </EuiFlexGroup>
       <EuiSpacer size="l" />
-
-      {/*<EuiFlexGroup justifyContent="center" gutterSize="xl">*/}
-      {/*  <LogoFairagroTall />*/}
-      {/*</EuiFlexGroup>*/}
-      {/*<EuiSpacer size="l" />*/}
 
       <>
         <EuiFlexGroup
