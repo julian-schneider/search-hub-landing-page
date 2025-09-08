@@ -79,14 +79,14 @@ export default function Footer() {
       {/*</EuiFlexGroup>*/}
       <EuiSpacer />
       <EuiFlexGroup
-        gutterSize={"m"}
+        gutterSize={"xl"}
         justifyContent={"spaceAround"}
         alignItems={"center"}
         wrap
       >
         <EuiFlexItem grow={false}>
           <a href={"https://www.dfg.de"} target={"_blank"} rel="noreferrer">
-            <DFGLOGO height={"90px"} width={"auto"} />
+            <DFGLOGO height={"80px"} width={"auto"} />
           </a>
         </EuiFlexItem>
         <EuiFlexItem grow={false}>
@@ -95,17 +95,17 @@ export default function Footer() {
             target={"_blank"}
             rel="noreferrer"
           >
-            <PROJECTLOGO height={"90px"} width={"auto"} />
+            <PROJECTLOGO height={"80px"} width={"auto"} />
           </a>
         </EuiFlexItem>
         <EuiFlexItem grow={false}>
           <a href={"https://www.zbmed.de"} target={"_blank"} rel="noreferrer">
-            <ZBMEDLOGO height={"90px"} width={"auto"} />
+            <ZBMEDLOGO height={"80px"} width={"auto"} />
           </a>
         </EuiFlexItem>
         <EuiFlexItem grow={false}>
           <a href={"https://intranet.fz-juelich.de/de"} target={"_blank"} rel="noreferrer">
-            <FZJLOGO height={"90px"} width={"auto"} />
+            <FZJLOGO height={"80px"} width={"auto"} />
           </a>
         </EuiFlexItem>
 
