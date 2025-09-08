@@ -10,6 +10,7 @@ import {
 import { ReactComponent as DFGLOGO } from "../../logos/dfg_logo_schriftzug_blau_foerderung_en.svg";
 import { ReactComponent as PROJECTLOGO } from "../../logos/Project_Logo_footer.svg";
 import { ReactComponent as ZBMEDLOGO } from "../../logos/ZBMED_2017_DE.svg";
+import { ReactComponent as FZJLOGO } from "../../logos/Logo_FZ_Juellich_RGB_schutzzone_weiss.svg";
 import { EuiNavigationLink } from "./EuiCustomLink";
 
 export default function Footer() {
@@ -102,6 +103,12 @@ export default function Footer() {
             <ZBMEDLOGO height={"90px"} width={"auto"} />
           </a>
         </EuiFlexItem>
+        <EuiFlexItem grow={false}>
+          <a href={"https://intranet.fz-juelich.de/de"} target={"_blank"} rel="noreferrer">
+            <FZJLOGO height={"90px"} width={"auto"} />
+          </a>
+        </EuiFlexItem>
+
         {/*<EuiFlexItem grow={false}>*/}
         {/*  <a*/}
         {/*    href={"https://doi.org/10.17616/R31NJMZG"}*/}

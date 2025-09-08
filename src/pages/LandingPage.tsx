@@ -84,8 +84,8 @@ const LandingPage: React.FC = () => {
         </EuiTitle>
       </EuiFlexGroup>
       <EuiSpacer size="l" />
-      <EuiFlexGroup justifyContent="center" gutterSize="xl" responsive={true}>
-        <EuiFlexItem grow={false}>
+      <EuiFlexGroup justifyContent="center" alignItems="stretch" gutterSize="xl" responsive={true}>
+        <EuiFlexItem>
           <EuiPanel className={"servicePanel"}>
             <EuiFlexGroup direction={"column"} alignItems={"center"}>
               <EuiFlexItem>
@@ -114,7 +114,7 @@ const LandingPage: React.FC = () => {
             </EuiFlexGroup>
           </EuiPanel>
         </EuiFlexItem>
-        <EuiFlexItem grow={false}>
+        <EuiFlexItem>
           <EuiPanel className={"servicePanel"}>
             <EuiFlexGroup direction={"column"} alignItems={"center"}>
               <EuiFlexItem>
@@ -132,14 +132,16 @@ const LandingPage: React.FC = () => {
               <EuiFlexItem>
                 <EuiText grow={false}>
                   <p>
-                    Find research data repositories from the agrosystem
-                    sciences. The search functionality is based on metadata
+                    Discover trusted research data repositories within the
+                    agrosystem sciences. Our search is powered by metadata
                     harvested from{" "}
                     <EuiLink href="https://www.re3data.org" target="_blank">
                       re3data.org
                     </EuiLink>
-                    . <EuiSpacer size={"s"} /> Currently, we are serving 15
-                    repositories.
+                    , a leading registry of research data repositories. This
+                    ensures you find reliable and relevant sources.{" "}
+                    <EuiSpacer size={"s"} /> Currently, our hub provides access
+                    to 15 repositories.
                     <EuiSpacer size={"m"} />
                   </p>
                 </EuiText>
