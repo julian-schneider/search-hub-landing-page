@@ -12,7 +12,7 @@ import {
   EuiTitle,
 } from "@elastic/eui";
 import { css, Global } from "@emotion/react";
-import { ReactComponent as LogoFairagroWide } from "../logos/Project_Logo_footer.svg";
+import { ReactComponent as LogoFairagroSearchHub } from "../logos/Logo_SearchHub.svg";
 
 const LandingPage: React.FC = () => {
   return (
@@ -28,7 +28,7 @@ const LandingPage: React.FC = () => {
           </EuiTitle>
         </EuiFlexItem>
         <EuiFlexItem grow={false}>
-          <LogoFairagroWide width={"300px"} height={"auto"} />
+          <LogoFairagroSearchHub width={"300px"} height={"auto"} />
         </EuiFlexItem>
       </EuiFlexGroup>
       <EuiSpacer size="l" />
