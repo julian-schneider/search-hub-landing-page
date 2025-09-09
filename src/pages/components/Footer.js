@@ -104,7 +104,7 @@ export default function Footer() {
           </a>
         </EuiFlexItem>
         <EuiFlexItem grow={false}>
-          <a href={"https://intranet.fz-juelich.de/de"} target={"_blank"} rel="noreferrer">
+          <a href={"https://www.fz-juelich.de/"} target={"_blank"} rel="noreferrer">
             <FZJLOGO height={"80px"} width={"auto"} />
           </a>
         </EuiFlexItem>

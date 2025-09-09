@@ -29,7 +29,7 @@ export default function Header() {
           <EuiBetaBadge
             label={"Beta"}
             size={"s"}
-            tooltipContent={"Beta Service Description"}
+            tooltipContent={"This service is new and subject to change. Please help us by reporting any feedback."}
           />
           <EuiCustomHeaderLink color="text" to="/" isActive={false}>
             <EuiIcon type="project_Favicon-32x32.svg" size="xl" />
