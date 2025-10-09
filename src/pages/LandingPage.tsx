@@ -7,14 +7,34 @@ import {
   EuiIcon,
   EuiLink,
   EuiPanel,
+  EuiSkeletonTitle,
   EuiSpacer,
   EuiText,
   EuiTitle,
 } from "@elastic/eui";
 import { css, Global } from "@emotion/react";
 import { ReactComponent as LogoFairagroSearchHub } from "../logos/Logo_SearchHub.svg";
+import { useQuery } from "react-query";
+import axios from "axios";
+
+function getStats(serviceUrl: string | undefined) {
+  return axios.get(serviceUrl + "/api/stats/").then((response) => {
+    return response.data;
+  });
+}
 
 const LandingPage: React.FC = () => {
+  const { data: datasetsStatsData, isLoading: datasetsStatsIsLoading } =
+    useQuery("datasets-stats", () => getStats(window.REACT_APP_DATASETS_URL), {
+      enabled: true,
+    });
+  const { data: repositoriesStatsData, isLoading: repositoriesStatsIsLoading } =
+    useQuery(
+      "repositories-stats",
+      () => getStats(window.REACT_APP_REPOSITORIES_URL),
+      { enabled: true }
+    );
+
   return (
     <>
       <EuiFlexGroup
@@ -84,12 +104,20 @@ const LandingPage: React.FC = () => {
         </EuiTitle>
       </EuiFlexGroup>
       <EuiSpacer size="l" />
-      <EuiFlexGroup justifyContent="center" alignItems="stretch" gutterSize="xl" responsive={true}>
+      <EuiFlexGroup
+        justifyContent="center"
+        alignItems="stretch"
+        gutterSize="xl"
+        responsive={true}
+      >
         <EuiFlexItem>
           <EuiPanel className={"servicePanel"}>
             <EuiFlexGroup direction={"column"} alignItems={"center"}>
               <EuiFlexItem>
-                <EuiButton className={"serviceBtn"} href={window.REACT_APP_DATASETS_URL}>
+                <EuiButton
+                  className={"serviceBtn"}
+                  href={window.REACT_APP_DATASETS_URL}
+                >
                   <EuiTitle>
                     <h3>
                       Datasets <EuiIcon type="search" />
@@ -105,8 +133,18 @@ const LandingPage: React.FC = () => {
                     infrastructures (RDIs) such as BonaRes, OpenAgrar, and
                     e!DAL. Their metadata are harvested and harmonized by the
                     FAIRagro middleware into a standardised metadata schema.{" "}
-                    <EuiSpacer size={"s"} /> Currently, we are serving 1817
-                    datasets.
+                    <EuiSpacer size={"s"} />
+                    <EuiSkeletonTitle
+                      size="s"
+                      isLoading={datasetsStatsIsLoading}
+                    >
+                      {datasetsStatsData && (
+                        <>
+                          Currently, we are serving{" "}
+                          {datasetsStatsData?.totalElements} datasets.
+                        </>
+                      )}
+                    </EuiSkeletonTitle>
                     <EuiSpacer size={"m"} />
                   </p>
                 </EuiText>
@@ -140,8 +178,18 @@ const LandingPage: React.FC = () => {
                     </EuiLink>
                     , a leading registry of research data repositories. This
                     ensures you find reliable and relevant sources.{" "}
-                    <EuiSpacer size={"s"} /> Currently, our hub provides access
-                    to 15 repositories.
+                    <EuiSpacer size={"s"} />
+                    <EuiSkeletonTitle
+                      size="s"
+                      isLoading={repositoriesStatsIsLoading}
+                    >
+                      {repositoriesStatsData && (
+                        <>
+                          Currently, our hub provides access to{" "}
+                          {repositoriesStatsData?.totalElements} repositories.
+                        </>
+                      )}
+                    </EuiSkeletonTitle>
                     <EuiSpacer size={"m"} />
                   </p>
                 </EuiText>

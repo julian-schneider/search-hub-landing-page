@@ -6,6 +6,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { EuiProvider } from "@elastic/eui";
 import { BrowserRouter } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "./theme";
 
@@ -17,27 +18,31 @@ declare global {
   }
 }
 
+const queryClient = new QueryClient();
+
 render(
   <React.StrictMode>
-    <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <EuiProvider
-          colorMode="light"
-          modify={{
-            colors: {
-              LIGHT: {
-                primary: theme.color.euiPrimary,
-                warning: theme.color.euiWarning,
-                body: theme.color.euiBody,
-                accent: theme.color.euiAccent,
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <EuiProvider
+            colorMode="light"
+            modify={{
+              colors: {
+                LIGHT: {
+                  primary: theme.color.euiPrimary,
+                  warning: theme.color.euiWarning,
+                  body: theme.color.euiBody,
+                  accent: theme.color.euiAccent,
+                },
               },
-            },
-          }}
-        >
-          <App />
-        </EuiProvider>
-      </ThemeProvider>
-    </BrowserRouter>
+            }}
+          >
+            <App />
+          </EuiProvider>
+        </ThemeProvider>
+      </BrowserRouter>
+    </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
